@@ -1,6 +1,6 @@
 # 模块: scene-graph
-# 目录
-## 类
+## 目录
+### 类
 - AmbientInfo
 - BaseNode
 - ComponentScheduler
@@ -15,13 +15,13 @@
 - SceneGlobals
 - ShadowsInfo
 - SkyboxInfo
-## 函数
+### 函数
 - createInvokeImpl
 - createInvokeImplJit
 - find
-## 变量
+### 变量
 - TRANSFORM_ON
 - invokeOnEnable
-## 枚举
+### 枚举
 - NodeSpace
 - TransformBit
