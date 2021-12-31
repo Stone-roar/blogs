@@ -1,17 +1,17 @@
 # 枚举: NodeEventType
 ## 目录
-- **触摸事件**
- - [TOUCH_START](#TOUCH_START)
- - [TOUCH_MOVE](#TOUCH_MOVE)
- - [TOUCH_END](#TOUCH_END)
- - [TOUCH_CANCEL](#TOUCH_CANCEL)
-- **鼠标事件**
- - [MOUSE_DOWN【按下】](#MOUSE_DOWN)
- - [MOUSE_MOVE【移动】](#MOUSE_MOVE)
- - [MOUSE_UP【松开】](#MOUSE_UP)
- - [MOUSE_WHEEL【滚轮】](#MOUSE_WHEEL)
- - [MOUSE_ENTER【进入区域】](#MOUSE_ENTER)
- - [MOUSE_LEAVE【离开区域】](#MOUSE_LEAVE)
+* **触摸事件**
+    * [TOUCH_START](#TOUCH_START)
+    * [TOUCH_MOVE](#TOUCH_MOVE)
+    * [TOUCH_END](#TOUCH_END)
+    * [TOUCH_CANCEL](#TOUCH_CANCEL)
+* **鼠标事件**
+    * [MOUSE_DOWN【按下】](#MOUSE_DOWN)
+    * [MOUSE_MOVE【移动】](#MOUSE_MOVE)
+    * [MOUSE_UP【松开】](#MOUSE_UP)
+    * [MOUSE_WHEEL【滚轮】](#MOUSE_WHEEL)
+    * [MOUSE_ENTER【进入区域】](#MOUSE_ENTER)
+    * [MOUSE_LEAVE【离开区域】](#MOUSE_LEAVE)
 * **节点状态事件**
     * 节点自身状态
         * [ACTIVE_IN_HIERARCHY_CHANGED](#ACTIVE_IN_HIERARCHY_CHANGED)
