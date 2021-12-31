@@ -55,7 +55,6 @@
 ### TRANSFORM_CHANGED
 > 节点改变位置、旋转或缩放事件。如果具体需要判断是哪一个事件，可通过判断回调的第一个参数类型是 [[Node.TransformBit]] 中的哪一个来获取。
 
-`@example 例子`
 ```typescript
 this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
  if (type & Node.TransformBit.POSITION) {
@@ -64,3 +63,64 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 }, this);
 ```
 - TRANSFORM_CHANGED = `"transform-changed"`
+
+### SCENE_CHANGED_FOR_PERSISTS
+> 当场景常驻节点的场景发生改变时触发的事件，一般在切换场景过程中触发。
+
+- SCENE_CHANGED_FOR_PERSISTS = `"scene-changed-for-persists"`
+
+### SIZE_CHANGED
+> 当节点尺寸改变时触发的事件。
+
+**性能警告**：这个事件会在每次对应的属性被修改时触发，如果事件回调损耗较高，有可能对性能有很大的负面影响，请尽量避免这种情况。
+
+- SIZE_CHANGED = `"size-changed"`
+
+### ANCHOR_CHANGED
+> 当节点的 UITransform 锚点改变时触发的事件。
+
+**性能警告**：这个事件会在每次对应的属性被修改时触发，如果事件回调损耗较高，有可能对性能有很大的负面影响，请尽量避免这种情况。
+
+- ANCHOR_CHANGED = `"anchor-changed"`
+
+### COLOR_CHANGED
+> 当节点的 UI 渲染组件颜色属性改变时触发的事件。
+
+**性能警告**：这个事件会在每次对应的属性被修改时触发，如果事件回调损耗较高，有可能对性能有很大的负面影响，请尽量避免这种情况。
+
+- COLOR_CHANGED = `"color-changed"`
+
+### CHILD_ADDED
+给目标节点添加子节点时触发的事件。
+
+- CHILD_ADDED = `"child-added"`
+
+### CHILD_REMOVED
+> 给目标节点移除子节点时触发的事件。
+
+- CHILD_REMOVED = `"child-removed"`
+
+### PARENT_CHANGED
+> 目标节点的父节点改变时触发的事件。
+
+- PARENT_CHANGED = `"parent-changed"`
+
+### NODE_DESTROYED
+> 目标节点被销毁时触发的事件。
+
+- NODE_DESTROYED = `"node-destroyed"`
+
+### LAYER_CHANGED
+> 节点 layer 改变时触发的事件。
+
+- LAYER_CHANGED = `"layer-changed"`
+
+### SIBLING_ORDER_CHANGED
+> 当节点在兄弟节点中的顺序发生变化时触发的事件。
+
+- SIBLING_ORDER_CHANGED = `"sibling-order-changed"`
+
+### ACTIVE_IN_HIERARCHY_CHANGED
+> 注意：此节点激活时，此事件仅从最顶部的节点发出。
+
+- ACTIVE_IN_HIERARCHY_CHANGED = `"active-in-hierarchy-changed"`
