@@ -2,7 +2,7 @@
 # 枚举: NodeEventType
 ## 目录
 * **触摸事件**
-    * [TOUCH_START](#触摸事件)
+    * [TOUCH_START](#TOUCH_START)
     * [TOUCH_MOVE](#TOUCH_MOVE)
     * [TOUCH_END](#TOUCH_END)
     * [TOUCH_CANCEL](#TOUCH_CANCEL)
