@@ -111,6 +111,8 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 ----------
 ## 属性
 
-### EventType [（点击查看所有 NodeEventType）](https://github.com/Stone-roar/blogs/blob/main/Cocos%20creator%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/api/Modules:%20scene-graph/class/Node_Enum_NodeEventType.md "枚举: NodeEventType")
+### EventType
 > 节点可能发出的事件类型
-• static EventType: NodeEventType = NodeEventType
+
+[（点击查看所有 NodeEventType）](https://github.com/Stone-roar/blogs/blob/main/Cocos%20creator%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/api/Modules:%20scene-graph/class/Node_Enum_NodeEventType.md "枚举: NodeEventType")
+- `tatic` EventType: NodeEventType = `NodeEventType`
