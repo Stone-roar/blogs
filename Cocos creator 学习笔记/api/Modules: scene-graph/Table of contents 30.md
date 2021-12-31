@@ -7,7 +7,7 @@
 - FogInfo
 - Layers
 - LifeCycleInvoker
-- [Node](./Cocos creator 学习笔记/api/Modules: scene-graph/class/Node.md)
+- [Node](/Cocos creator 学习笔记/api/Modules: scene-graph/class/Node.md)
 - NodeActivator
 - NodeUIProperties
 - OneOffInvoker
