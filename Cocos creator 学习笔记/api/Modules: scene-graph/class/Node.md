@@ -13,7 +13,7 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 - `static` TransformDirtyBit
 - `static` TransformBit
 - `static` NodeSpace
-- `static` [EventType](###EventType)
+- `static` [EventType](#EventType)
 - [editorExtrasTag]
 - active
 - activeInHierarchy
