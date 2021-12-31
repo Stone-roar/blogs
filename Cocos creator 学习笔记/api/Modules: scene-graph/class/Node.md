@@ -108,7 +108,5 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 - translate
 - updateWorldTransform
 - walk
-
-
 ----------
 ## 属性
