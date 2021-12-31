@@ -9,27 +9,49 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 ## 目录
 ### 属性
+-`static`reserveContentsForAllSyncablePrefabTag
+-`static`TransformDirtyBit
+-`static`TransformBit
+-`static`NodeSpace
+-`static`[EventType](###EventType)
 - [editorExtrasTag]
 - active
 - activeInHierarchy
+- angle
 - children
 - components
+- eulerAngles
 - eventProcessor
+- forward
+- hasChangedFlags
 - hideFlags
 - isValid
+- layer
+- matrix
 - name
+- native
 - parent
+- position
 - replicated
+- right
+- rotation
+- scale
 - scene
+- up
 - uuid
-
-### 枚举
-- `static` Flags
+- worldMatrix
+- worldPosition
+- worldRotation
+- worldScale
 
 ### 构造函数
 - constructor
 
 ### 方法
+- `static` resetHasChangedFlags
+- `static` isNode
+- `static` clearNodeArray
+- [serializeTag]
 - addChild
 - addComponent
 - attr
@@ -45,18 +67,49 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 - getComponents
 - getComponentsInChildren
 - getParent
+- getPosition
+- getRotation
+- getScale
 - getSiblingIndex
+- getWorldMatrix
+- getWorldPosition
+- getWorldRS
+- getWorldRT
+- getWorldRotation
+- getWorldScale
 - hasEventListener
 - insertChild
+- invalidateChildren
+- inverseTransformPoint
 - isChildOf
+- lookAt
 - off
 - on
 - once
+- pauseSystemEvents
 - removeAllChildren
 - removeChild
 - removeComponent
 - removeFromParent
+- resumeSystemEvents
+- rotate
 - setParent
+- setPosition
+- setRTS
+- setRotation
+- setRotationFromEuler
+- setScale
 - setSiblingIndex
+- setWorldPosition
+- setWorldRotation
+- setWorldRotationFromEuler
+- setWorldScale
 - targetOff
+- translate
+- updateWorldTransform
 - walk
+
+
+----------
+## 属性
+### EventType
