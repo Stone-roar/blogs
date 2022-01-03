@@ -20,9 +20,9 @@
         * [NODE_DESTROYED【被销毁】](#NODE_DESTROYED)
         * [LAYER_CHANGED【layer改变】](#LAYER_CHANGED)
         * [SCENE_CHANGED_FOR_PERSISTS【所在场景改变】](#)
-        * [！SIZE_CHANGED](#SIZE_CHANGED)
-        * [！ANCHOR_CHANGED](#ANCHOR_CHANGED)
-        * [！COLOR_CHANGED](#COLOR_CHANGED)
+        * [⚠ SIZE_CHANGED](#SIZE_CHANGED)
+        * [⚠ ANCHOR_CHANGED](#ANCHOR_CHANGED)
+        * [⚠ COLOR_CHANGED](#COLOR_CHANGED)
     * 节点族系状态改变
         * [CHILD_ADDED【添加子节点】](#CHILD_ADDED)
         * [CHILD_REMOVED【移除子节点】](#CHILD_REMOVED)
