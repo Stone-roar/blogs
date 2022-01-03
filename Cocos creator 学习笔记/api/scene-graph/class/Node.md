@@ -124,6 +124,7 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 ------
 ## 属性
+[（🆙回到顶部）](#目录)
 ### name
 > 该节点名称。
 
@@ -206,7 +207,7 @@ log(node.isValid);    // false, destroyed in the end of last frame
 - replicated: `boolean`
 
 ------
-
+[（🆙回到顶部）](#目录)
 <h3 id="TransformBit_index">（枚举）TransformBit</h3>
 节点变换更新的具体部分，可用于判断 `NodeEventType.TRANSFORM_CHANGED` 事件的具体类型。
 
