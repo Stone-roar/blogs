@@ -5,7 +5,7 @@
     * [TOUCH_START](#TOUCH_START)
     * [TOUCH_MOVE](#TOUCH_MOVE)
     * [TOUCH_END](#TOUCH_END)
-    * [TOUCH_CANCEL](#TOUCH_CANCEL)
+    * [TOUCH_CANCEL](#1TOUCH_CANCEL)
 * **鼠标事件**
     * [MOUSE_DOWN【按下】](#MOUSE_DOWN)
     * [MOUSE_MOVE【移动】](#MOUSE_MOVE)
@@ -34,9 +34,9 @@
 
 ---
 ## 触摸事件 {4}
+[（🆙回到顶部）](#目录)
 ### TOUCH_START
 > 手指开始触摸事件。
-
 - TOUCH_START = `"touch-start"`
 
 ### TOUCH_MOVE
@@ -54,8 +54,9 @@
 
 - TOUCH_CANCEL = `"touch-cancel"`
 
+---
 ## 鼠标事件 {6}
-
+[（🆙回到顶部）](#目录)
 ### MOUSE_DOWN
 > 当鼠标按下时触发一次。
 
@@ -86,7 +87,9 @@
 
 - MOUSE_LEAVE = `"mouse-leave"`
 
+---
 ## 节点状态事件 {12}
+[（🆙回到顶部）](#目录)
 ### ACTIVE_IN_HIERARCHY_CHANGED
 > 注意：此节点激活时，此事件仅从最顶部的节点发出。
 
