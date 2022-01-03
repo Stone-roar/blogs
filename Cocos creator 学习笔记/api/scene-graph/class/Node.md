@@ -10,40 +10,51 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 ## 目录
 ### 属性
 * 同 [**BaseNode**](BaseNode.md "Node基类")
-    * [`active` 节点自身激活状态\](#active)
-    * [`activeInHierarchy` 节点在场景中的激活状态](#activeInHierarchy)
-    * [`children` 节点的所有子节点](#children)
-    * [`components` 获取附加到此节点的所有组件](#components)
-    * [`eventProcessor`](#eventProcessor)
-    * [`hideFlags`](#hideFlags)
-    * [`isValid` 该对象是否可用](#isValid)
-    * [`name` 节点名称](#name)
-    * [`parent` 其父节点](#parent)
-    * [`replicated`](#replicated)
-    * [`scene` 此节点属于哪个场景](#scene)
-    * [`uuid`](#uuid)
+    * 基础属性
+        * [`name` 节点名称](#name)
+        * [`uuid`](#uuid)
+    * 状态
+        * [`active` 节点自身激活状态](#active)
+        * [`activeInHierarchy` 节点在场景中的激活状态](#activeInHierarchy)
+        * [`eventProcessor` 当前节点的事件处理器](#eventProcessor)
+    * 族系
+        * [`components` 获取附加到此节点的所有组件](#components)
+        * [`children` 节点的所有子节点](#children)
+        * [`parent` 其父节点](#parent)
+        * [`scene` 此节点属于哪个场景](#scene)
+    * 同 CCObject
+        * [`isValid` 该对象是否可用](#isValid)
+        * [`hideFlags`](#hideFlags)
+        * [`replicated`](#replicated)
 *  **Node**
-    * `static` reserveContentsForAllSyncablePrefabTag
-    * `static` [（枚举）TransformBit](#TransformBit_index)
-    * `static` NodeSpace
-    * `static` [（枚举）EventType 节点事件类型](#EventType_index)
-    * [editorExtrasTag]
-    * [`angle` 本地坐标系下z轴的旋转角度](#angle)
-    * eulerAngles
-    * forward
-    * hasChangedFlags
-    * layer
-    * matrix
-    * native
-    * position
-    * right
-    * rotation
-    * scale
-    * up
-    * worldMatrix
-    * worldPosition
-    * worldRotation
-    * worldScale
+    * static
+        * `static` reserveContentsForAllSyncablePrefabTag
+        * `static` [（枚举）TransformBit](#TransformBit_index)
+        * `static` NodeSpace
+        * `static` [（枚举）EventType 节点事件类型](#EventType_index)
+    * 基础属性
+        * [`position` 本地坐标](#position)
+        * [`worldPosition` 世界坐标](#worldPosition)
+        * [`layer` 节点所属层](#layer)
+        * [`native`](#native)
+        * [`editorExtrasTag`]
+    * 方向向量
+        * [`forward` 节点朝前方](#forward)
+        * [`right` 节点朝右方向](#right)
+        * [`up` 节点朝上方向](#up)
+    * 空间变换（旋转、变换、缩放）
+        * [`angle` 本地坐标系下z轴的旋转角度](#angle)
+        * [`eulerAngles` 本地坐标系下的旋转-Vec3](#eulerAngles)
+        * [`rotation` 本地坐标系下的旋转](#rotation)
+        * [`worldRotation` 世界坐标系下的旋转](#worldRotation)
+.
+        * [`hasChangedFlags` 在当前帧内节点的空间变换信息是否有变过](#hasChangedFlags)
+        * [`matrix` 本地坐标系变换矩阵](#matrix)
+        * [`worldMatrix` 世界坐标系变换矩阵](#worldMatrix)
+.
+        * [`scale` 本地坐标系下的缩放](#scale)
+        * [`worldScale` 世界坐标系下的缩放](#worldScale)
+
 
 
 ### 构造函数
@@ -110,8 +121,20 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 - translate
 - updateWorldTransform
 - walk
+
 ------
 ## 属性
+### name
+> 该节点名称。
+
+- name: `string`
+
+### uuid
+> 主要用于编辑器的 uuid，在编辑器下可用于持久化存储，在项目构建之后将变成自增的 id。
+
+- uuid: `string`
+
+------
 ### active
 > 当前节点的自身激活状态。
 
@@ -126,26 +149,33 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 - activeInHierarchy: `boolean`
 
-### children
-> 节点的所有子节点。
-
-- children: `array`
-
-### components
-> 获取附加到此节点的所有组件。
-
-- components: ReadonlyArray<Component>
-
 ### eventProcessor
 > 当前节点的事件处理器，提供 EventTarget 能力。
 
 - eventProcessor: `any`
 
-### hideFlags
-> 在继承 CCObject 对象后，控制是否需要隐藏，锁定，序列化等功能。
+------
+### components
+> 获取附加到此节点的所有组件。
 
-- hideFlags: `Flags`
+- components: ReadonlyArray<Component>
 
+### children
+> 节点的所有子节点。
+
+- children: `array`
+
+### parent
+> 父节点
+
+- parent: `null | this`
+
+### scene
+> 此节点属于哪个场景。
+
+- scene: `Scene`
+
+------
 ### isValid
 > 表示该对象是否可用（被 destroy 后将不可用）。
 
@@ -167,28 +197,13 @@ log(node.isValid);    // false, destroyed in the end of last frame
 ```
 - isValid: `boolean`
 
-### name
-> 该节点名称。
+### hideFlags
+> 在继承 CCObject 对象后，控制是否需要隐藏，锁定，序列化等功能。
 
-- name: `string`
-
-### parent
-> 父节点
-
-- parent: `null | this`
+- hideFlags: `Flags`
 
 ### replicated
 - replicated: `boolean`
-
-### scene
-> 此节点属于哪个场景。
-
-- scene: `Scene`
-
-### uuid
-> 主要用于编辑器的 uuid，在编辑器下可用于持久化存储，在项目构建之后将变成自增的 id。
-
-- uuid: `string`
 
 ------
 
@@ -210,7 +225,42 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 
 - `static` EventType: [NodeEventType](Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") = `NodeEventType`
 
+---
+### position
+> 本地坐标系下的坐标
 
+- position: `Readonly<Vec3>`
+
+### worldPosition
+> 世界坐标系下的坐标
+
+- worldPosition: `Readonly<Vec3>`
+
+### layer
+> 节点所属层，主要影响射线检测、物理碰撞等，参考 [[Layers]]
+
+- layer: `number`
+
+### native
+- native: `any`
+
+---
+### forward
+> 当前节点面向的前方方向，默认前方为 -z 方向
+
+- forward: `Vec3`
+
+### right
+> 返回当前节点在世界空间中朝右的方向向量
+
+- right: `Vec3`
+
+### up
+返回当前节点在世界空间中朝上的方向向量
+
+- up: `Vec3`
+
+---
 ### angle
 > 本地坐标系下的旋转，用欧拉角表示，但是限定在 z 轴上。
 
@@ -220,3 +270,40 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 > 本地坐标系下的旋转，用欧拉角表示
 
 - eulerAngles: `Readonly<Vec3>`
+---
+### rotation
+> 本地坐标系下的旋转，用四元数表示
+
+- rotation: `Readonly<Quat>`
+
+### worldRotation
+> 世界坐标系下的旋转，用四元数表示
+
+- worldRotation: `Readonly<Quat>`
+
+---
+### hasChangedFlags
+> 这个节点的空间变换信息在当前帧内是否有变过？
+
+- hasChangedFlags: `number`
+
+### matrix
+> 本地坐标系变换矩阵
+
+- matrix:`Readonly<Mat4>`
+
+### worldMatrix
+> 世界坐标系变换矩阵
+
+- worldMatrix: `Readonly<Mat4>`
+
+---
+### scale
+> 本地坐标系下的缩放
+
+- scale: `Readonly<Vec3>`
+
+### worldScale
+> 世界坐标系下的缩放
+
+- worldScale: `Readonly<Vec3>`
