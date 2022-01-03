@@ -3,7 +3,7 @@
 
 - 维护场景树以及节点生命周期管理
 - 提供 EventTarget 的事件管理和注册能力
-- 派发节点状态相关的事件，参考：[[Node.EventType]]
+- 派发节点状态相关的事件，参考：[Node.EventType](Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型")
 - 管理组件
 
 ## 目录
