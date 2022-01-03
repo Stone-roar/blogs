@@ -33,7 +33,7 @@
 - physics
 - physics2d
 - pipeline
-- [scene-graph](https://github.com/Stone-roar/blogs/blob/main/Cocos%20creator%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/api/Modules:%20scene-graph/Table%20of%20contents%2030.md "场景图形")
+- [scene-graph](https://github.com/Stone-roar/blogs/blob/main/Cocos%20creator%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/api/scene-graph/scene-graph%20%E7%9B%AE%E5%BD%95.md "场景图形")
 - spine
 - terrain
 - tiledmap
