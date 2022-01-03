@@ -33,7 +33,7 @@
 - physics
 - physics2d
 - pipeline
-- [scene-graph 场景图形](Cocos%20creator%20学习笔记/api/scene-graph/scene-graph%20目录 "场景图形")
+- [scene-graph 场景图形](scene-graph/scene-graph%20目录 "场景图形")
 - spine
 - terrain
 - tiledmap
