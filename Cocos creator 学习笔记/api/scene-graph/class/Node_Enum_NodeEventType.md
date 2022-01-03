@@ -2,14 +2,14 @@
 # 枚举: NodeEventType
 ## 目录
 * **触摸事件**
-    * [TOUCH_START](#TOUCH_START)
-    * [TOUCH_MOVE](#TOUCH_MOVE)
-    * [TOUCH_END](#TOUCH_END)
-    * [TOUCH_CANCEL](#1TOUCH_CANCEL)
+    * [TOUCH_START 触摸开始](#TOUCH_START)
+    * [TOUCH_MOVE 触摸移动](#TOUCH_MOVE)
+    * [TOUCH_END 触摸结束](#TOUCH_END)
+    * [TOUCH_CANCEL 取消触摸](#1TOUCH_CANCEL)
 * **鼠标事件**
-    * [MOUSE_DOWN【按下】](#MOUSE_DOWN)
-    * [MOUSE_MOVE【移动】](#MOUSE_MOVE)
-    * [MOUSE_UP【松开】](#MOUSE_UP)
+    * [MOUSE_DOWN【鼠标按下】](#MOUSE_DOWN)
+    * [MOUSE_MOVE【鼠标移动（按下状态）】](#MOUSE_MOVE)
+    * [MOUSE_UP【鼠标松开】](#MOUSE_UP)
     * [MOUSE_WHEEL【滚轮】](#MOUSE_WHEEL)
     * [MOUSE_ENTER【进入区域】](#MOUSE_ENTER)
     * [MOUSE_LEAVE【离开区域】](#MOUSE_LEAVE)
