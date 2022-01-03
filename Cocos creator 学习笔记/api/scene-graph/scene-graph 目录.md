@@ -2,7 +2,7 @@
 ## 目录
 ### 类
 - AmbientInfo
-- BaseNode
+- [BaseNode](class/BaseNode.md "节点基类")
 - ComponentScheduler
 - FogInfo
 - Layers
