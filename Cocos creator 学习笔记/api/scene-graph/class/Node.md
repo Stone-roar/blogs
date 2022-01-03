@@ -9,10 +9,10 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 ## 目录
 ### 属性
-* 同 [**BaseNode**](BaseNode.md "Node基类")
+* 同 class [**BaseNode**](BaseNode.md "Node基类")
     * 基础属性
         * [`name` 节点名称](#name)
-        * [`uuid`](#uuid)
+        * [`uuid`](#uuid "uuid")
     * 状态
         * [`active` 节点自身激活状态](#active)
         * [`activeInHierarchy` 节点在场景中的激活状态](#activeInHierarchy)
@@ -22,16 +22,16 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
         * [`children` 节点的所有子节点](#children)
         * [`parent` 其父节点](#parent)
         * [`scene` 此节点属于哪个场景](#scene)
-    * 同 CCObject
+    * 同 class CCObject
         * [`isValid` 该对象是否可用](#isValid)
         * [`hideFlags`](#hideFlags)
         * [`replicated`](#replicated)
 *  **Node**
     * static
-        * `static` reserveContentsForAllSyncablePrefabTag
+        * `static` [reserveContentsForAllSyncablePrefabTag](#reserveContentsForAllSyncablePrefabTag)
         * `static` [（枚举）TransformBit](#TransformBit_index)
-        * `static` NodeSpace
         * `static` [（枚举）EventType 节点事件类型](#EventType_index)
+        * `static` [NodeSpace 空间变换操作的坐标系](#NodeSpace)
     * 基础属性
         * [`position` 本地坐标](#position)
         * [`worldPosition` 世界坐标](#worldPosition)
@@ -208,6 +208,10 @@ log(node.isValid);    // false, destroyed in the end of last frame
 
 ------
 [（🆙回到顶部）](#目录)
+### reserveContentsForAllSyncablePrefabTag
+机翻：“保留所有可同步预制标记的内容”。
+- `static` reserveContentsForAllSyncablePrefabTag: `symbol` = `reserveContentsForAllSyncablePrefabTag`
+
 <h3 id="TransformBit_index">（枚举）TransformBit</h3>
 节点变换更新的具体部分，可用于判断 `NodeEventType.TRANSFORM_CHANGED` 事件的具体类型。
 
@@ -225,6 +229,11 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 > 节点可能发出的事件类型
 
 - `static` EventType: [NodeEventType](Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") = `NodeEventType`
+
+### NodeSpace
+> 空间变换操作的坐标系
+
+- `static` NodeSpace: NodeSpace = `NodeSpace`
 
 ---
 ### position
