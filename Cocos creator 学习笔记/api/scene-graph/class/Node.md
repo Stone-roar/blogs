@@ -10,9 +10,9 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 ## 目录
 ### 属性
 - `static` reserveContentsForAllSyncablePrefabTag
-- `static` [（枚举）TransformBit](#TransformBit)
+- `static` [（枚举）TransformBit](#（枚举）TransformBit)
 - `static` NodeSpace
-- `static` [（枚举）EventType 节点事件类型](#EventType)
+- `static` [（枚举）EventType 节点事件类型](#（枚举）EventType)
 - [editorExtrasTag]
 - active
 - activeInHierarchy
