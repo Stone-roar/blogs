@@ -10,10 +10,9 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 ## 目录
 ### 属性
 - `static` reserveContentsForAllSyncablePrefabTag
-- `static` TransformDirtyBit
-- `static` TransformBit
+- `static` [（枚举）TransformBit](#TransformBit)
 - `static` NodeSpace
-- `static` [EventType【事件类型】](#EventType)
+- `static` [（枚举）EventType 节点事件类型](#EventType)
 - [editorExtrasTag]
 - active
 - activeInHierarchy
@@ -109,10 +108,22 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 - updateWorldTransform
 - walk
 ----------
-## 属性
+## •属性
 
-### EventType
+### （枚举）TransformBit
+节点变换更新的具体部分，可用于判断 `NodeEventType.TRANSFORM_CHANGED` 事件的具体类型。
+
+- `static` TransformBit: [TransformBit](Node_Enum_TransformBit.md "点击查看所有 “节点变换” 枚举类型") = TransformBit
+
+```typescript
+this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
+ if (type & Node.TransformBit.POSITION) {
+      //...
+  }
+}, this);
+```
+
+### （枚举）EventType
 > 节点可能发出的事件类型
 
-[（↪点击查看所有 “事件类型”）](Node_Enum_NodeEventType.md "枚举: NodeEventType")
-- `static` EventType: NodeEventType = `NodeEventType`
+- `static` EventType: [NodeEventType](Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") = `NodeEventType`

@@ -7,12 +7,12 @@
     * [TOUCH_END 触摸结束](#TOUCH_END)
     * [TOUCH_CANCEL 取消触摸](#1TOUCH_CANCEL)
 * **鼠标事件**
-    * [MOUSE_DOWN【鼠标按下】](#MOUSE_DOWN)
-    * [MOUSE_MOVE【鼠标移动（按下状态）】](#MOUSE_MOVE)
-    * [MOUSE_UP【鼠标松开】](#MOUSE_UP)
-    * [MOUSE_WHEEL【滚轮】](#MOUSE_WHEEL)
-    * [MOUSE_ENTER【进入区域】](#MOUSE_ENTER)
-    * [MOUSE_LEAVE【离开区域】](#MOUSE_LEAVE)
+    * [MOUSE_DOWN 鼠标按下](#MOUSE_DOWN)
+    * [MOUSE_MOVE 鼠标移动（按下状态）](#MOUSE_MOVE)
+    * [MOUSE_UP 鼠标松开](#MOUSE_UP)
+    * [MOUSE_WHEEL 滚轮](#MOUSE_WHEEL)
+    * [MOUSE_ENTER 进入区域](#MOUSE_ENTER)
+    * [MOUSE_LEAVE 离开区域](#MOUSE_LEAVE)
 * **节点状态事件**
     * 节点自身状态
         * [ACTIVE_IN_HIERARCHY_CHANGED](#ACTIVE_IN_HIERARCHY_CHANGED)
@@ -98,7 +98,7 @@
 ### TRANSFORM_CHANGED
 > 节点改变位置、旋转或缩放事件。
 
-如果具体需要判断是哪一个事件，可通过判断回调的第一个参数类型是 [[Node.TransformBit]] 中的哪一个来获取。
+如果具体需要判断是哪一个事件，可通过判断回调的第一个参数类型是 [Node.TransformBit](Node_Enum_TransformBit.md "点击查看所有枚举类型") 中的哪一个来获取。
 
 ```typescript
 this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
