@@ -61,12 +61,12 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 
 ### 构造函数
-*  constructor
+*  [constructor](#构造函数)
 
 ### 方法
 * 同 class [**BaseNode**](BaseNode.md "Node基类")
     * 节点属性配置
-        *  [`attr`](#attr)
+        *  [`attr` 节点属性配置函数](#attr)
     * 事件相关
         *  [`on`](#on)
         *  [`once`](#once)
@@ -342,3 +342,120 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 > 世界坐标系下的缩放
 
 - worldScale: `Readonly<Vec3>`
+
+---
+## 构造函数
+
+
+
+---
+## 方法
+### attr
+- **attr**(`attrs`: `unknown`) :  void
+
+属性配置函数。在 attrs 的所有属性将被设置为节点属性。
+
+**例子：**
+
+```typescript
+var attrs = { name: 'New Name', active: false };
+node.attr(attrs);
+```
+
+---
+### on
+
+- **on**(`type`: `string` | `NodeEventType`, `callback`: `AnyFunction`, `target?`: `unknown`, `useCapture?`: `any`) :  `void`
+
+在节点上注册指定类型的回调函数，也可以设置 target 用于绑定响应函数的 this 对象。 鼠标或触摸事件会被系统调用 dispatchEvent 方法触发，触发的过程包含三个阶段：
+
+1. 捕获阶段：派发事件给捕获目标，比如，节点树中注册了捕获阶段的父节点，从根节点开始派发直到目标节点。
+2. 目标阶段：派发给目标节点的监听器。
+3. 冒泡阶段：派发事件给冒泡目标，比如，节点树中注册了冒泡阶段的父节点，从目标节点开始派发直到根节点。 同时您可以将事件派发到父节点或者通过调用 stopPropagation 拦截它。 你也可以注册自定义事件到节点上，并通过 emit 方法触发此类事件，对于这类事件，不会发生捕获冒泡阶段，只会直接派发给注册在该节点上的监听器 你可以通过在 emit 方法调用时在 type 之后传递额外的参数作为事件回调的参数列表。
+
+**例子：**
+
+```typescript
+this.node.on(NodeEventType.TOUCH_START, this.memberFunction, this);  // if "this" is component and the "memberFunction" declared in CCClass.
+node.on(NodeEventType.TOUCH_START, callback, this);
+node.on(NodeEventType.TOUCH_MOVE, callback, this);
+node.on(NodeEventType.TOUCH_END, callback, this);
+```
+
+#### 参数
+
+| Name | Type | Description |
+| :-: | :-: | :-: |
+| `type` | `string` \| `NodeEventType` | `string` 表示要侦听的事件类型的字符串。所有有关内置事件请查阅 [Node.EventType](Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") |
+| `callback` | `AnyFunction` | 回调函数会在事件派发时调用。回调函数具有唯一性，重复的回调函数将被忽略。 |
+| `target?` | `unknown` | The target (this object) to invoke the callback, can be null |
+| `useCapture?` | `any` | When set to true, the listener will be triggered at capturing phase which is ahead of the final target emit, otherwise it will be triggered during bubbling phase. |
+
+**Returns** `void`
+
+### once
+- **once**(`type`: `string`, `callback`: `AnyFunction`, `target?`: `unknown`, `useCapture?`: `any`) : `void `
+
+注册节点的特定事件类型回调，回调会在第一时间被触发后删除自身。
+
+#### 参数
+
+| Name | Type | Description |
+| :-: | :-: | :-: |
+| `type` | `string` | `string` 表示要侦听的事件类型的字符串。 |
+| `callback` | `AnyFunction` | 回调函数会在事件派发时调用。回调函数具有唯一性，重复的回调函数将被忽略。 |
+| `target` | `unknown` | The target (this object) to invoke the callback, can be null |
+| `useCapture` | `any` | - |
+
+**Returns** `void`
+
+### off
+- **off**(`type`: `string`, `callback?`: `AnyFunction`, `target?`: `unknown`, `useCapture?`: `any`) : `void`
+
+删除之前与同类型，回调，目标或 useCapture 注册的回调。
+
+**例子**
+
+```typescript
+this.node.off(NodeEventType.TOUCH_START, this.memberFunction, this);
+node.off(NodeEventType.TOUCH_START, callback, this.node);
+```
+
+#### 参数
+
+| Name | Type | Description |
+| :-: | :-: | :-: |
+| `type` | `string` | `string` 表示要侦听的事件类型的字符串。 |
+| `callback` | `AnyFunction` | 回调函数会在事件派发时调用。回调函数具有唯一性，重复的回调函数将被忽略。 |
+| `target` | `unknown` | The target (this object) to invoke the callback, can be null |
+| `useCapture` | `any` | - |
+
+**Returns** `void`
+
+### targetOff
+- **targetOff**(`target`: `string` | `unknown`) : `void`
+
+移除目标上的所有注册事件。
+
+#### 参数
+
+| Name | Type | Description |
+| :-: | :-: | :-: |
+| `target` | `string`\| `unknown` | The target to be searched for all related callbacks |
+
+**Returns** `void`
+
+### hasEventListener
+- **hasEventListener**(`type`: `string`, `callback`: `AnyFunction`, `target`: `unknown`) : `any`
+
+检查事件目标对象是否有为特定类型的事件注册的回调。
+
+#### 参数
+
+| Name | Type | Description |
+| :-: | :-: | :-: |
+| `type` | string |事件类型 |
+| `callback` | `AnyFunction` | 事件监听器的回调函数，如果所有给定事件类型的监听器都不存在该函数，该函数将被移除。|
+| `target` | `unknown` | The callback called of the event listener |
+
+**Returns** `any`
