@@ -455,7 +455,7 @@ node.off(NodeEventType.TOUCH_START, callback, this.node);
 | Name | Type | Description |
 | :-: | :-: | :-: |
 | `type` | string |事件类型 |
-| `callback` | `AnyFunction` | 事件监听器的回调函数，如果所有给定事件类型的监听器都不存在该函数，该函数将被移除。|
+| `callback` | `AnyFunction` | 事件监听器的回调函数，如果所给定的事件类型的所有监听器都不存在该回调函数，该函数将被移除。|
 | `target` | `unknown` | The callback called of the event listener |
 
 **Returns** `any`
