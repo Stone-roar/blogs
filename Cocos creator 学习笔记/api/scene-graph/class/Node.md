@@ -26,6 +26,7 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
         * [`isValid` 该对象是否可用](#isValid)
         * [`hideFlags`](#hideFlags)
         * [`replicated`](#replicated)
+.
 *  **Node**
     * static
         * `static` [reserveContentsForAllSyncablePrefabTag](#reserveContentsForAllSyncablePrefabTag)
@@ -60,69 +61,90 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 
 ### 构造函数
-- constructor
+*  constructor
 
 ### 方法
-- `static` resetHasChangedFlags
-- `static` isNode
-- `static` clearNodeArray
-- [serializeTag]
-- addChild
-- addComponent
-- attr
-- destroy
-- destroyAllChildren
-- dispatchEvent
-- emit
-- getChildByName
-- getChildByPath
-- getChildByUuid
-- getComponent
-- getComponentInChildren
-- getComponents
-- getComponentsInChildren
-- getParent
-- getPosition
-- getRotation
-- getScale
-- getSiblingIndex
-- getWorldMatrix
-- getWorldPosition
-- getWorldRS
-- getWorldRT
-- getWorldRotation
-- getWorldScale
-- hasEventListener
-- insertChild
-- invalidateChildren
-- inverseTransformPoint
-- isChildOf
-- lookAt
-- off
-- on
-- once
-- pauseSystemEvents
-- removeAllChildren
-- removeChild
-- removeComponent
-- removeFromParent
-- resumeSystemEvents
-- rotate
-- setParent
-- setPosition
-- setRTS
-- setRotation
-- setRotationFromEuler
-- setScale
-- setSiblingIndex
-- setWorldPosition
-- setWorldRotation
-- setWorldRotationFromEuler
-- setWorldScale
-- targetOff
-- translate
-- updateWorldTransform
-- walk
+* 同 class [**BaseNode**](BaseNode.md "Node基类")
+    * 节点属性配置
+        *  [`attr`](#attr)
+    * 事件相关
+        *  [`on`](#on)
+        *  [`once`](#once)
+        *  [`off`](#off)
+        *  [`targetOff`](#targetOff)
+        *  [`hasEventListener`](#hasEventListener)
+        *  [`emit`](#emit)
+        *  [`dispatchEvent`](#dispatchEvent)
+    * 组件相关方法
+        *  [`addComponent`](#addComponent)
+        *  [`getComponent`](#getComponent)
+        *  [`getComponentInChildren`](#getComponentInChildren)
+        *  [`getComponents`](#getComponents)
+        *  [`getComponentsInChildren`](#getComponentsInChildren)
+        *  [`removeComponent`](#removeComponent)
+    * 族系相关方法
+        *  [`walk`](#walk)
+.
+        *  [`setParent`](#setParent)
+        *  [`getParent`](#getParent)
+.
+        *  [`addChild`](#addChild)
+        *  [`insertChild`](#insertChild)
+        *  [`isChildOf`](#isChildOf)
+        *  [`getChildByName`](#getChildByName)
+        *  [`getChildByPath`](#getChildByPath)
+        *  [`getChildByUuid`](#getChildByUuid)
+        *  [`removeFromParent`](#removeFromParent)
+.
+        *  [`setSiblingIndex`](#setSiblingIndex)
+        *  [`getSiblingIndex`](#getSiblingIndex)
+        *  [`removeChild`](#removeChild)
+        *  [`removeAllChildren`](#removeAllChildren)
+.
+        *  [`destroy`](#destroy)
+        *  [`destroyAllChildren`](#destroyAllChildren)
+.
+*  **Node**
+    * static
+        *  `static` [`resetHasChangedFlags`](#resetHasChangedFlags)
+        *  `static` [`isNode`](#isNode)
+        *  `static` [`clearNodeArray`](#clearNodeArray)
+        *  [serializeTag]
+    * 事件相关
+        *  [`pauseSystemEvents`](#pauseSystemEvents)
+        *  [`resumeSystemEvents`](#resumeSystemEvents)
+    * 节点的变换相关方法（位置、移动、旋转、变换、缩放）
+        *  [`invalidateChildren`](#invalidateChildren)
+.
+        *  [`updateWorldTransform`](#updateWorldTransform)
+.
+        *  [`setPosition`](#setPosition)
+        *  [`getPosition`](#getPosition)
+        *  [`setWorldPosition`](#setWorldPosition)
+        *  [`getWorldPosition`](#getWorldPosition)
+        *  [`inverseTransformPoint`](#inverseTransformPoint)
+.
+        *  [`lookAt`](#lookAt)
+        *  [`translate`](#translate)
+        *  [`rotate`](#rotate)
+.
+        *  [`setRotation`](#setRotation)
+        *  [`setRotationFromEuler`](#setRotationFromEuler)
+        *  [`getRotation`](#getRotation)
+        *  [`setWorldRotation`](#setWorldRotation)
+        *  [`setWorldRotationFromEuler`](#setWorldRotationFromEuler)
+        *  [`getWorldRotation`](#getWorldRotation)
+.
+        *  [`getWorldMatrix`](#getWorldMatrix)
+.
+        *  [`setScale`](#setScale)
+        *  [`getScale`](#getScale)
+        *  [`setWorldScale`](#setWorldScale)
+        *  [`getWorldScale`](#getWorldScale)
+.
+        *  [`setRTS`](#setRTS)
+        *  [`getWorldRS`](#getWorldRS)
+        *  [`getWorldRT`](#getWorldRT)
 
 ------
 ## 属性

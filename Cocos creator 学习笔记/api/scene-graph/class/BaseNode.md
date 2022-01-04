@@ -25,7 +25,51 @@
     * [`hideFlags`](#hideFlags)
     * [`replicated`](#replicated)
 
+### 枚举
+* `static` Flags
 
+### 构造函数
+* constructor
+
+### 方法
+* 节点属性配置
+    *  attr
+* 事件相关
+    *  on
+    *  once
+    *  off
+    *  targetOff
+    *  hasEventListener
+    *  emit
+    *  dispatchEvent
+* 组件相关方法
+    *  addComponent
+    *  getComponent
+    *  getComponentInChildren
+    *  getComponents
+    *  getComponentsInChildren
+    *  removeComponent
+* 族系相关方法
+    *  walk
+.
+    *  setParent
+    *  getParent
+.
+    *  addChild
+    *  insertChild
+    *  isChildOf
+    *  getChildByName
+    *  getChildByPath
+    *  getChildByUuid
+    *  removeFromParent
+.
+    *  setSiblingIndex
+    *  getSiblingIndex
+    *  removeChild
+    *  removeAllChildren
+.
+    *  destroy
+    *  destroyAllChildren
 
 
 
