@@ -33,8 +33,6 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
         * `static` [（枚举）EventType 节点事件类型](#EventType_index)
         * `static` [NodeSpace 空间变换操作的坐标系](#NodeSpace)
     * 基础属性
-        * [`position` 本地坐标](#position)
-        * [`worldPosition` 世界坐标](#worldPosition)
         * [`layer` 节点所属层](#layer)
         * [`native`](#native)
         * [`editorExtrasTag`]
@@ -42,9 +40,13 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
         * [`forward` 节点朝前方](#forward)
         * [`right` 节点朝右方向](#right)
         * [`up` 节点朝上方向](#up)
-    * 空间变换（旋转、变换、缩放）
+    * 节点的变换（位置、旋转、变换、缩放）
+        * [`position` 本地坐标](#position)
+        * [`worldPosition` 世界坐标](#worldPosition)
+.
         * [`angle` 本地坐标系下z轴的旋转角度](#angle)
         * [`eulerAngles` 本地坐标系下的旋转-Vec3](#eulerAngles)
+.
         * [`rotation` 本地坐标系下的旋转](#rotation)
         * [`worldRotation` 世界坐标系下的旋转](#worldRotation)
 .
@@ -236,16 +238,6 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 - `static` NodeSpace: NodeSpace = `NodeSpace`
 
 ---
-### position
-> 本地坐标系下的坐标
-
-- position: `Readonly<Vec3>`
-
-### worldPosition
-> 世界坐标系下的坐标
-
-- worldPosition: `Readonly<Vec3>`
-
 ### layer
 > 节点所属层，主要影响射线检测、物理碰撞等，参考 [[Layers]]
 
@@ -269,6 +261,17 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 返回当前节点在世界空间中朝上的方向向量
 
 - up: `Vec3`
+
+---
+### position
+> 本地坐标系下的坐标
+
+- position: `Readonly<Vec3>`
+
+### worldPosition
+> 世界坐标系下的坐标
+
+- worldPosition: `Readonly<Vec3>`
 
 ---
 ### angle
