@@ -148,7 +148,7 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 ------
 ## 属性
-[（🆙回到顶部）](#目录)
+[（🆙回到目录）](#目录)
 ### name
 > 该节点名称。
 
@@ -231,7 +231,7 @@ log(node.isValid);    // false, destroyed in the end of last frame
 - replicated: `boolean`
 
 ------
-[（🆙回到顶部）](#目录)
+[（🆙回到目录）](#目录)
 ### reserveContentsForAllSyncablePrefabTag
 机翻：“保留所有可同步预制标记的内容”。
 - `static` reserveContentsForAllSyncablePrefabTag: `symbol` = `reserveContentsForAllSyncablePrefabTag`
@@ -350,6 +350,7 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 
 ---
 ## 方法
+[（🆙回到目录）](#目录)
 ### attr
 - **attr**(`attrs`: `unknown`) :  void
 
