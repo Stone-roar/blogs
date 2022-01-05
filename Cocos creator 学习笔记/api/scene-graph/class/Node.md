@@ -548,4 +548,4 @@ var test = node.addComponent("Test");
 | :-: | :-: | :-: |
 | `className` | `string` | The class name of the component to add |
 
-##### Returns  [Component]()
+##### Returns `Component`
