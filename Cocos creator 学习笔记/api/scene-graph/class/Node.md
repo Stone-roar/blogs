@@ -68,11 +68,11 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
     * 节点属性配置
         *  [`attr` 节点属性配置函数](#attr)
     * 事件相关
-        *  [`on`](#on)
-        *  [`once`](#once)
-        *  [`off`](#off)
-        *  [`targetOff`](#targetOff)
-        *  [`hasEventListener`](#hasEventListener)
+        *  [`on` 事件注册](#on)
+        *  [`once` 一次性事件注册](#once)
+        *  [`off` 事件注销](#off)
+        *  [`targetOff` 移除目标上的所有注册事件](#targetOff)
+        *  [`hasEventListener` 检查事件目标是否有为特定类型的事件注册的回调](#hasEventListener)
         *  [`emit`](#emit)
         *  [`dispatchEvent`](#dispatchEvent)
     * 组件相关方法
@@ -365,7 +365,7 @@ node.attr(attrs);
 ---
 ### on
 
-- **on**(`type`: `string` | `NodeEventType`, `callback`: `AnyFunction`, `target?`: `unknown`, `useCapture?`: `any`) :  `void`
+- **on**(type: `string` | `NodeEventType`, callback: `AnyFunction`, target?: `unknown`, useCapture?: `any`) :  `void`
 
 在节点上注册指定类型的回调函数，也可以设置 target 用于绑定响应函数的 this 对象。 鼠标或触摸事件会被系统调用 dispatchEvent 方法触发，触发的过程包含三个阶段：
 
@@ -387,14 +387,15 @@ node.on(NodeEventType.TOUCH_END, callback, this);
 | Name | Type | Description |
 | :-: | :-: | :-: |
 | `type` | `string` \| `NodeEventType` | `string` 表示要侦听的事件类型的字符串。所有有关内置事件请查阅 [Node.EventType](Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") |
-| `callback` | `AnyFunction` | 回调函数会在事件派发时调用。回调函数具有唯一性，重复的回调函数将被忽略。 |
-| `target?` | `unknown` | The target (this object) to invoke the callback, can be null |
-| `useCapture?` | `any` | When set to true, the listener will be triggered at capturing phase which is ahead of the final target emit, otherwise it will be triggered during bubbling phase. |
+| `callback` | `AnyFunction` | 事件触发时执行的函数。回调函数具有唯一性，重复的回调函数将被忽略。 |
+| `target?` | `unknown` | `target` 表示回调函数执行时的this指向（回调函数由谁调用），可以为 `null`。 |
+| `useCapture?` | `any` | 只有节点事件才会设置这个值。When set to true, the listener will be triggered at capturing phase which is ahead of the final target emit, otherwise it will be triggered during bubbling phase. |
 
 **Returns** `void`
 
+---
 ### once
-- **once**(`type`: `string`, `callback`: `AnyFunction`, `target?`: `unknown`, `useCapture?`: `any`) : `void `
+- **once**(type: `string`, callback: `AnyFunction`, target?: `unknown`, useCapture?: `any`) : `void `
 
 注册节点的特定事件类型回调，回调会在第一时间被触发后删除自身。
 
@@ -403,14 +404,15 @@ node.on(NodeEventType.TOUCH_END, callback, this);
 | Name | Type | Description |
 | :-: | :-: | :-: |
 | `type` | `string` | `string` 表示要侦听的事件类型的字符串。 |
-| `callback` | `AnyFunction` | 回调函数会在事件派发时调用。回调函数具有唯一性，重复的回调函数将被忽略。 |
-| `target` | `unknown` | The target (this object) to invoke the callback, can be null |
-| `useCapture` | `any` | - |
+| `callback` | `AnyFunction` | 事件触发时执行的函数。回调函数具有唯一性，重复的回调函数将被忽略。  |
+| `target?` | `unknown` | `target` 表示回调函数执行时的this指向（回调函数由谁调用），可以为 `null`。 |
+| `useCapture?` | `any` | - |
 
 **Returns** `void`
 
+---
 ### off
-- **off**(`type`: `string`, `callback?`: `AnyFunction`, `target?`: `unknown`, `useCapture?`: `any`) : `void`
+- **off**(type: `string`, callback?: `AnyFunction`, target?: `unknown`, useCapture?: `any`) : `void`
 
 删除之前与同类型，回调，目标或 useCapture 注册的回调。
 
@@ -426,14 +428,15 @@ node.off(NodeEventType.TOUCH_START, callback, this.node);
 | Name | Type | Description |
 | :-: | :-: | :-: |
 | `type` | `string` | `string` 表示要侦听的事件类型的字符串。 |
-| `callback` | `AnyFunction` | 回调函数会在事件派发时调用。回调函数具有唯一性，重复的回调函数将被忽略。 |
-| `target` | `unknown` | The target (this object) to invoke the callback, can be null |
-| `useCapture` | `any` | - |
+| `callback?` | `AnyFunction` | 事件触发时执行的函数。回调函数具有唯一性，重复的回调函数将被忽略。  |
+| `target?` | `unknown` | `target` 表示回调函数执行时的this指向（回调函数由谁调用），可以为 `null`。 |
+| `useCapture?` | `any` | - |
 
 **Returns** `void`
 
+---
 ### targetOff
-- **targetOff**(`target`: `string` | `unknown`) : `void`
+- **targetOff**(target: `string` | `unknown`) : `void`
 
 移除目标上的所有注册事件。
 
@@ -445,8 +448,9 @@ node.off(NodeEventType.TOUCH_START, callback, this.node);
 
 **Returns** `void`
 
+---
 ### hasEventListener
-- **hasEventListener**(`type`: `string`, `callback`: `AnyFunction`, `target`: `unknown`) : `any`
+- **hasEventListener**(type: `string`, callback: `AnyFunction`, target: `unknown`) : `any`
 
 检查事件目标对象是否有为特定类型的事件注册的回调。
 
@@ -455,7 +459,49 @@ node.off(NodeEventType.TOUCH_START, callback, this.node);
 | Name | Type | Description |
 | :-: | :-: | :-: |
 | `type` | string |事件类型 |
-| `callback` | `AnyFunction` | 事件监听器的回调函数，如果所给定的事件类型的所有监听器都不存在该回调函数，该函数将被移除。|
+| `callback` | `AnyFunction` | 事件触发时执行的函数，如果所给定的事件类型的所有监听器都不存在该回调函数，该函数将被移除。|
 | `target` | `unknown` | The callback called of the event listener |
 
 **Returns** `any`
+
+---
+### emit
+- **emit**(type: `string`, arg0: `any`, arg1: `any`, arg2: `any`, arg3: `any`, arg4: `any`) :  void
+
+通过事件名发送自定义事件
+
+**例子**
+
+```typescript
+eventTarget.emit('fire', event);
+eventTarget.emit('fire', message, emitter);
+```
+
+#### 参数
+
+| Name | Type | Description |
+| :-: | :-: | :-: |
+| `type` | `string` | event type |
+| `arg0` | `any` | - |
+| `arg1` | `any` | First argument in callback |
+| `arg2` | `any` | Second argument in callback |
+| `arg3` | `any` | Third argument in callback |
+| `arg4` | `any` | Fourth argument in callback |
+
+**Returns** `void`
+
+---
+### dispatchEvent
+- **dispatchEvent**(event: `Event`) :  `void`
+
+分发事件到事件流中。
+
+#### 参数
+
+| Name | Type | Description |
+| :-: | :-: | :-: |
+| `event` | `Event` | The Event object that is dispatched into the event flow |
+
+**Returns** `void`
+
+---
