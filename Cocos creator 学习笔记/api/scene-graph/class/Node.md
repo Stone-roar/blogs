@@ -506,3 +506,46 @@ eventTarget.emit('fire', message, emitter);
 **Returns** `void`
 
 ---
+### addComponent
+
+- **addComponent**(`classConstructor`: `Constructor`<`T`>) : `T`
+
+向节点添加一个指定类型的组件类，你还可以通过传入脚本的名称来添加组件。
+
+**`throws`** `TypeError` if the `classConstructor` does not specify a cc-class constructor extending the `Component`.
+
+**`example`**
+
+```
+var sprite = node.addComponent(Sprite);
+```
+
+#### 参数
+
+| Name | Type | Description |
+| :-: | :-: | :-: |
+| `classConstructor` | `Constructor`<`T`> | The class of the component to add |
+
+##### Returns  `T`
+
+.
+
+- **addComponent**(`className`: `string`) :  `Component`
+
+向节点添加一个指定类型的组件类，你还可以通过传入脚本的名称来添加组件。
+
+**`throws`** `TypeError` if the `className` does not specify a cc-class constructor extending the `Component`.
+
+**`example`**
+
+```
+var test = node.addComponent("Test");
+```
+
+#### 参数
+
+| Name | Type | Description |
+| :-: | :-: | :-: |
+| `className` | `string` | The class name of the component to add |
+
+##### Returns  [Component](https://docs.cocos.com/creator/api/zh/#/docs/3.4/zh/component/Class/Component)
