@@ -73,8 +73,8 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
         *  [`off` 事件注销](#off)
         *  [`targetOff` 移除目标上的所有注册事件](#targetOff)
         *  [`hasEventListener` 检查事件目标是否有为特定类型的事件注册的回调](#hasEventListener)
-        *  [`emit`](#emit)
-        *  [`dispatchEvent`](#dispatchEvent)
+        *  [`emit` 通过事件名发送自定义事件](#emit)
+        *  [`dispatchEvent` 分发事件到事件流中](#dispatchEvent)
     * 组件相关方法
         *  [`addComponent`](#addComponent)
         *  [`getComponent`](#getComponent)
