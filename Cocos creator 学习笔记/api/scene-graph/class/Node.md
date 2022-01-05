@@ -548,4 +548,4 @@ var test = node.addComponent("Test");
 | :-: | :-: | :-: |
 | `className` | `string` | The class name of the component to add |
 
-##### Returns  [Component](https://docs.cocos.com/creator/api/zh/#/docs/3.4/zh/component/Class/Component)
+##### Returns  [Component]()
