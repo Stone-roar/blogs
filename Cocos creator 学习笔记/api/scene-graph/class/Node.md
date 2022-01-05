@@ -76,7 +76,7 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
         *  [`emit` 通过事件名发送自定义事件](#emit)
         *  [`dispatchEvent` 分发事件到事件流中](#dispatchEvent)
     * 组件相关方法
-        *  [`addComponent`](#addComponent)
+        *  [`addComponent` 向节点添加一个指定类型的组件类](#addComponent)
         *  [`getComponent`](#getComponent)
         *  [`getComponentInChildren`](#getComponentInChildren)
         *  [`getComponents`](#getComponents)
