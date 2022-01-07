@@ -2,12 +2,12 @@
 ## 目录
 ### 类
 - AmbientInfo
-- [BaseNode](class/BaseNode.md "节点基类")
+- [BaseNode](SceneGraph_Class_BaseNode.md "节点基类")
 - ComponentScheduler
 - FogInfo
 - Layers
 - LifeCycleInvoker
-- [Node](class/Node.md "节点")
+- [Node](SceneGraph_Class_Node.md "节点")
 - NodeActivator
 - NodeUIProperties
 - OneOffInvoker

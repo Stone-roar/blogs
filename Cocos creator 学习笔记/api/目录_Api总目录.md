@@ -33,7 +33,7 @@
 - physics
 - physics2d
 - pipeline
-- [scene-graph 场景图形](scene-graph/scene-graph%20目录.md "场景图形")
+- [scene-graph 场景图形](目录_SceneGraph.md "场景图形")
 - spine
 - terrain
 - tiledmap

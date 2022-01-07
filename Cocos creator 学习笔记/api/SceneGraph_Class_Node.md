@@ -1,5 +1,5 @@
 # 类: Node
-继承于: [BaseNode](BaseNode.md "Node基类")
+继承于: [BaseNode](SceneGraph_Class_BaseNode.md "Node基类")
 
 Cocos Creator 场景中的所有节点类。 基本特性有：
 
@@ -9,7 +9,7 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 ## 目录
 ### 属性
-* 同 class [**BaseNode**](BaseNode.md "Node基类")
+* 同 class [**BaseNode**](SceneGraph_Class_BaseNode.md "Node基类")
     * 基础属性
         * [`name` 节点名称](#name)
         * [`uuid`](#uuid "uuid")
@@ -64,7 +64,7 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 *  [constructor](#构造函数)
 
 ### 方法
-* 同 class [**BaseNode**](BaseNode.md "Node基类")
+* 同 class [**BaseNode**](SceneGraph_Class_BaseNode.md "Node基类")
     * 节点属性配置
         *  [`attr` 节点属性配置函数](#attr)
     * 事件相关
@@ -239,7 +239,7 @@ log(node.isValid);    // false, destroyed in the end of last frame
 <h3 id="TransformBit_index">（枚举）TransformBit</h3>
 节点变换更新的具体部分，可用于判断 `NodeEventType.TRANSFORM_CHANGED` 事件的具体类型。
 
-- `static` TransformBit: [TransformBit](Node_Enum_TransformBit.md "点击查看所有 “节点变换” 枚举类型") = TransformBit
+- `static` TransformBit: [TransformBit](SceneGraph_Class_Node_Enum_TransformBit.md "点击查看所有 “节点变换” 枚举类型") = TransformBit
 
 ```typescript
 this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
@@ -252,7 +252,7 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 <h3 id="EventType_index">（枚举）EventType</h3>
 > 节点可能发出的事件类型
 
-- `static` EventType: [NodeEventType](Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") = `NodeEventType`
+- `static` EventType: [NodeEventType](SceneGraph_Class_Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") = `NodeEventType`
 
 ### NodeSpace
 > 空间变换操作的坐标系
@@ -387,7 +387,7 @@ node.on(NodeEventType.TOUCH_END, callback, this);
 
 | Name | Type | Description |
 | :-: | :-: | :-: |
-| `type` | `string` \| `NodeEventType` | `string` 表示要侦听的事件类型的字符串。所有有关内置事件请查阅 [Node.EventType](Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") |
+| `type` | `string` \| `NodeEventType` | `string` 表示要侦听的事件类型的字符串。所有有关内置事件请查阅 [Node.EventType](SceneGraph_Class_Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") |
 | `callback` | `AnyFunction` | 事件触发时执行的函数。回调函数具有唯一性，重复的回调函数将被忽略。 |
 | `target?` | `unknown` | `target` 表示回调函数执行时的this指向（回调函数由谁调用），可以为 `null`。 |
 | `useCapture?` | `any` | 只有节点事件才会设置这个值。When set to true, the listener will be triggered at capturing phase which is ahead of the final target emit, otherwise it will be triggered during bubbling phase. |
