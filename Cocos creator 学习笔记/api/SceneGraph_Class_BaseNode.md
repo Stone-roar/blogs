@@ -1,5 +1,5 @@
 # 类: BaseNode
-[Node](SceneGraph_Class_Node.md "Node") 的基类，他会负责：
+[Node](SceneGraph_Class_Node.md "Node类") 的基类，他会负责：
 
 - 维护场景树以及节点生命周期管理
 - 提供 EventTarget 的事件管理和注册能力
