@@ -1,4 +1,4 @@
-[（🔙返回上一级）](目录_SceneGraph.md "scene-graph模块") 
+[（🔙返回上一级）](目录_SceneGraph.md "scene-graph模块")
 # 类: Node
 继承于: [BaseNode](SceneGraph_Class_BaseNode.md "Node基类")
 
@@ -30,10 +30,10 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 .
 * **Node**
   * static
-    * `static` [reserveContentsForAllSyncablePrefabTag](#reserveContentsForAllSyncablePrefabTag)
-    * `static` [（枚举）TransformBit](#TransformBit_index)
-    * `static` [（枚举）EventType 节点事件类型](#EventType_index)
-    * `static` [NodeSpace 空间变换操作的坐标系](#NodeSpace)
+    * `static` [`reserveContentsForAllSyncablePrefabTag`](#reserveContentsForAllSyncablePrefabTag)
+    * `static` [`（枚举）TransformBit` 节点的空间变换位 **标记**](#TransformBit_index)
+    * `static` [`（枚举）EventType` 节点事件类型](#EventType_index)
+    * `static` [`（枚举）NodeSpace` 空间变换操作的坐标系](#NodeSpace_index)
   * 基础属性
     * [`layer` 节点所属层](#layer)
     * [`native`](#native)
@@ -149,7 +149,7 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 ------
 ## 属性
-[（🆙回到目录）](#目录)
+[（🆙回到顶部）](#目录)
 ### name
 > 该节点名称。
 
@@ -232,15 +232,18 @@ log(node.isValid);    // false, destroyed in the end of last frame
 - replicated: `boolean`
 
 ------
-[（🆙回到目录）](#目录)
+[（🆙回到顶部）](#目录)
 ### reserveContentsForAllSyncablePrefabTag
 机翻：“保留所有可同步预制标记的内容”。
 - `static` reserveContentsForAllSyncablePrefabTag: `symbol` = `reserveContentsForAllSyncablePrefabTag`
 
 <h3 id="TransformBit_index">（枚举）TransformBit</h3>
+
+> 节点的空间变换位**标记**
+
 节点变换更新的具体部分，可用于判断 `NodeEventType.TRANSFORM_CHANGED` 事件的具体类型。
 
-- `static` TransformBit: [TransformBit](SceneGraph_Class_Node_Enum_TransformBit.md "点击查看所有 “节点变换” 枚举类型") = TransformBit
+- `static` TransformBit: [TransformBit](SceneGraph_Enum_TransformBit.md "点击查看所有 “节点变换” 枚举类型") = TransformBit
 
 ```typescript
 this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
@@ -251,14 +254,16 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 ```
 
 <h3 id="EventType_index">（枚举）EventType</h3>
+
 > 节点可能发出的事件类型
 
 - `static` EventType: [NodeEventType](SceneGraph_Class_Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") = `NodeEventType`
 
-### NodeSpace
-> 空间变换操作的坐标系
+<h3 id="NodeSpace_index">（枚举）NodeSpace</h3>
 
-- `static` NodeSpace: NodeSpace = `NodeSpace`
+> 空间变换操作的坐标系 **标记**：本地坐标系 Or 世界坐标系
+
+- `static` NodeSpace: [NodeSpace](SceneGraph_Enum_NodeSpace.md) = `NodeSpace`
 
 ---
 ### layer
@@ -351,7 +356,7 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 
 ---
 ## 方法
-[（🆙回到目录）](#目录)
+[（🆙回到顶部）](#目录)
 ### attr
 - **attr**(`attrs`: `unknown`) :  void
 

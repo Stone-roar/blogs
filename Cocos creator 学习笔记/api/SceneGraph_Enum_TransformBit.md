@@ -1,5 +1,5 @@
 [（🔙返回上一级）](SceneGraph_Class_Node.md "Node类")  
-# 枚举: NodeEventType
+# 枚举: TransformBit
 - 节点的空间变换位标记
 ------
 ### NONE [无改变]
@@ -22,3 +22,5 @@
 
 ### TRS_MASK
  `TRS_MASK= "Bad expression <-8>"`
+
+[（转到 Node.TransformBit）](SceneGraph_Class_Node.md#TransformBit_index "（枚举）TransformBit")
