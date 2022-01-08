@@ -4,7 +4,7 @@
 Event
 EventHandler
 EventKeyboard
-SystemEvent
+[SystemEvent](Event_Class_SystemEvent.md#EventType_index)
 Touch
 
 ### 函数
