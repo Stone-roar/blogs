@@ -22,15 +22,15 @@ systemEvent.off(SystemEvent.EventType.DEVICEMOTION, this.onDeviceMotionEvent, th
 * [**`static`** EventType 事件类型](#EventType_index)
 
 ### 方法
-*  [`on` 事件注册](#on)
-*  [`once` 一次性事件注册](#once)
-*  [`off` 事件注销](#off)
-*  [`targetOff` 移除目标上的所有注册事件](#targetOff)
+* [`on` 事件注册](#on)
+* [`once` 一次性事件注册](#once)
+* [`off` 事件注销](#off)
+* [`targetOff` 移除目标上的所有注册事件](#targetOff)
 * [`removeAll：`
 1、移除在特定事件类型中注册的所有回调；
 2、或在某个目标中注册的所有回调。](#removeall)
-*  [`hasEventListener` 检查事件目标是否有为特定类型的事件注册的回调](#hasEventListener)
-*  [`emit` 通过事件名发送自定义事件](#emit)
+* [`hasEventListener` 检查事件目标是否有为特定类型的事件注册的回调](#hasEventListener)
+* [`emit` 通过事件名发送自定义事件](#emit)
 .
 * [`setAccelerometerEnabled` 是否启用加速度计事件](#setaccelerometerenabled)
 * [`setAccelerometerInterval` 设置加速度计间隔值](#setaccelerometerinterval)

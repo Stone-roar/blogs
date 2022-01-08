@@ -1,29 +1,29 @@
 # 类: BaseNode
-[Node](Node.md "Node") 的基类，他会负责：
+[Node](SceneGraph_Class_Node.md "Node") 的基类，他会负责：
 
 - 维护场景树以及节点生命周期管理
 - 提供 EventTarget 的事件管理和注册能力
-- 派发节点状态相关的事件，参考：[Node.EventType](Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型")
+- 派发节点状态相关的事件，参考：[Node.EventType](SceneGraph_Class_Node.md#EventType_index "点击查看 “节点—事件类型”")
 - 管理组件
 
 ## 目录
 ### 属性
 * 基础属性
-    * [`name` 节点名称](#name)
-    * [`uuid`](#uuid)
+  * [`name` 节点名称](#name)
+  * [`uuid`](#uuid "uuid")
 * 状态
-    * [`active` 节点自身激活状态](#active)
-    * [`activeInHierarchy` 节点在场景中的激活状态](#activeInHierarchy)
-    * [`eventProcessor` 当前节点的事件处理器](#eventProcessor)
+  * [`active` 节点自身激活状态](#active)
+  * [`activeInHierarchy` 节点在场景中的激活状态](#activeInHierarchy)
+  * [`eventProcessor` 当前节点的事件处理器](#eventProcessor)
 * 族系
-    * [`components` 获取附加到此节点的所有组件](#components)
-    * [`children` 节点的所有子节点](#children)
-    * [`parent` 其父节点](#parent)
-    * [`scene` 此节点属于哪个场景](#scene)
-* CCObject
-    * [`isValid` 该对象是否可用](#isValid)
-    * [`hideFlags`](#hideFlags)
-    * [`replicated`](#replicated)
+  * [`components` 获取附加到此节点的所有组件](#components)
+  * [`children` 节点的所有子节点](#children)
+  * [`parent` 其父节点](#parent)
+  * [`scene` 此节点属于哪个场景](#scene)
+* 同 class CCObject
+  * [`isValid` 该对象是否可用](#isValid)
+  * [`hideFlags`](#hideFlags)
+  * [`replicated`](#replicated)
 
 ### 枚举
 * `static` Flags
@@ -33,43 +33,43 @@
 
 ### 方法
 * 节点属性配置
-    *  attr
+  *  [`attr` 节点属性配置函数](#attr)
 * 事件相关
-    *  on
-    *  once
-    *  off
-    *  targetOff
-    *  hasEventListener
-    *  emit
-    *  dispatchEvent
+  *  [`on` 事件注册](#on)
+  *  [`once` 一次性事件注册](#once)
+  *  [`off` 事件注销](#off)
+  *  [`targetOff` 移除目标上的所有注册事件](#targetOff)
+  *  [`hasEventListener` 检查事件目标是否有为特定类型的事件注册的回调](#hasEventListener)
+  *  [`emit` 通过事件名发送自定义事件](#emit)
+  *  [`dispatchEvent` 分发事件到事件流中](#dispatchEvent)
 * 组件相关方法
-    *  addComponent
-    *  getComponent
-    *  getComponentInChildren
-    *  getComponents
-    *  getComponentsInChildren
-    *  removeComponent
+  *  [`addComponent` 向节点添加一个指定类型的组件类](#addComponent)
+  *  [`getComponent`](#getComponent)
+  *  [`getComponentInChildren`](#getComponentInChildren)
+  *  [`getComponents`](#getComponents)
+  *  [`getComponentsInChildren`](#getComponentsInChildren)
+  *  [`removeComponent`](#removeComponent)
 * 族系相关方法
-    *  walk
+  *  [`walk`](#walk)
 .
-    *  setParent
-    *  getParent
+  *  [`setParent`](#setParent)
+  *  [`getParent`](#getParent)
 .
-    *  addChild
-    *  insertChild
-    *  isChildOf
-    *  getChildByName
-    *  getChildByPath
-    *  getChildByUuid
-    *  removeFromParent
+  *  [`addChild`](#addChild)
+  *  [`insertChild`](#insertChild)
+  *  [`isChildOf`](#isChildOf)
+  *  [`getChildByName`](#getChildByName)
+  *  [`getChildByPath`](#getChildByPath)
+  *  [`getChildByUuid`](#getChildByUuid)
+  *  [`removeFromParent`](#removeFromParent)
 .
-    *  setSiblingIndex
-    *  getSiblingIndex
-    *  removeChild
-    *  removeAllChildren
+  *  [`setSiblingIndex`](#setSiblingIndex)
+  *  [`getSiblingIndex`](#getSiblingIndex)
+  *  [`removeChild`](#removeChild)
+  *  [`removeAllChildren`](#removeAllChildren)
 .
-    *  destroy
-    *  destroyAllChildren
+  *  [`destroy`](#destroy)
+  *  [`destroyAllChildren`](#destroyAllChildren)
 
 
 

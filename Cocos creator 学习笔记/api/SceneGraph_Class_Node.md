@@ -10,53 +10,53 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 ## 目录
 ### 属性
 * 同 class [**BaseNode**](SceneGraph_Class_BaseNode.md "Node基类")
-    * 基础属性
-        * [`name` 节点名称](#name)
-        * [`uuid`](#uuid "uuid")
-    * 状态
-        * [`active` 节点自身激活状态](#active)
-        * [`activeInHierarchy` 节点在场景中的激活状态](#activeInHierarchy)
-        * [`eventProcessor` 当前节点的事件处理器](#eventProcessor)
-    * 族系
-        * [`components` 获取附加到此节点的所有组件](#components)
-        * [`children` 节点的所有子节点](#children)
-        * [`parent` 其父节点](#parent)
-        * [`scene` 此节点属于哪个场景](#scene)
-    * 同 class CCObject
-        * [`isValid` 该对象是否可用](#isValid)
-        * [`hideFlags`](#hideFlags)
-        * [`replicated`](#replicated)
+  * 基础属性
+    * [`name` 节点名称](#name)
+    * [`uuid`](#uuid "uuid")
+  * 状态
+    * [`active` 节点自身激活状态](#active)
+    * [`activeInHierarchy` 节点在场景中的激活状态](#activeInHierarchy)
+    * [`eventProcessor` 当前节点的事件处理器](#eventProcessor)
+  * 族系
+    * [`components` 获取附加到此节点的所有组件](#components)
+    * [`children` 节点的所有子节点](#children)
+    * [`parent` 其父节点](#parent)
+    * [`scene` 此节点属于哪个场景](#scene)
+  * 同 class CCObject
+    * [`isValid` 该对象是否可用](#isValid)
+    * [`hideFlags`](#hideFlags)
+    * [`replicated`](#replicated)
 .
-*  **Node**
-    * static
-        * `static` [reserveContentsForAllSyncablePrefabTag](#reserveContentsForAllSyncablePrefabTag)
-        * `static` [（枚举）TransformBit](#TransformBit_index)
-        * `static` [（枚举）EventType 节点事件类型](#EventType_index)
-        * `static` [NodeSpace 空间变换操作的坐标系](#NodeSpace)
-    * 基础属性
-        * [`layer` 节点所属层](#layer)
-        * [`native`](#native)
-        * [`editorExtrasTag`]
-    * 方向向量
-        * [`forward` 节点朝前方](#forward)
-        * [`right` 节点朝右方向](#right)
-        * [`up` 节点朝上方向](#up)
-    * 节点的变换（位置、旋转、变换、缩放）
-        * [`position` 本地坐标](#position)
-        * [`worldPosition` 世界坐标](#worldPosition)
+* **Node**
+  * static
+    * `static` [reserveContentsForAllSyncablePrefabTag](#reserveContentsForAllSyncablePrefabTag)
+    * `static` [（枚举）TransformBit](#TransformBit_index)
+    * `static` [（枚举）EventType 节点事件类型](#EventType_index)
+    * `static` [NodeSpace 空间变换操作的坐标系](#NodeSpace)
+  * 基础属性
+    * [`layer` 节点所属层](#layer)
+    * [`native`](#native)
+    * [`editorExtrasTag`]
+  * 方向向量
+    * [`forward` 节点朝前方](#forward)
+    * [`right` 节点朝右方向](#right)
+    * [`up` 节点朝上方向](#up)
+  * 节点的变换（位置、旋转、变换、缩放）
+    * [`position` 本地坐标](#position)
+    * [`worldPosition` 世界坐标](#worldPosition)
 .
-        * [`angle` 本地坐标系下z轴的旋转角度](#angle)
-        * [`eulerAngles` 本地坐标系下的旋转-Vec3](#eulerAngles)
+    * [`angle` 本地坐标系下z轴的旋转角度](#angle)
+    * [`eulerAngles` 本地坐标系下的旋转-Vec3](#eulerAngles)
 .
-        * [`rotation` 本地坐标系下的旋转](#rotation)
-        * [`worldRotation` 世界坐标系下的旋转](#worldRotation)
+    * [`rotation` 本地坐标系下的旋转](#rotation)
+    * [`worldRotation` 世界坐标系下的旋转](#worldRotation)
 .
-        * [`hasChangedFlags` 在当前帧内节点的空间变换信息是否有变过](#hasChangedFlags)
-        * [`matrix` 本地坐标系变换矩阵](#matrix)
-        * [`worldMatrix` 世界坐标系变换矩阵](#worldMatrix)
+    * [`hasChangedFlags` 在当前帧内节点的空间变换信息是否有变过](#hasChangedFlags)
+    * [`matrix` 本地坐标系变换矩阵](#matrix)
+    * [`worldMatrix` 世界坐标系变换矩阵](#worldMatrix)
 .
-        * [`scale` 本地坐标系下的缩放](#scale)
-        * [`worldScale` 世界坐标系下的缩放](#worldScale)
+    * [`scale` 本地坐标系下的缩放](#scale)
+    * [`worldScale` 世界坐标系下的缩放](#worldScale)
 
 
 
@@ -65,86 +65,86 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 ### 方法
 * 同 class [**BaseNode**](SceneGraph_Class_BaseNode.md "Node基类")
-    * 节点属性配置
-        *  [`attr` 节点属性配置函数](#attr)
-    * 事件相关
-        *  [`on` 事件注册](#on)
-        *  [`once` 一次性事件注册](#once)
-        *  [`off` 事件注销](#off)
-        *  [`targetOff` 移除目标上的所有注册事件](#targetOff)
-        *  [`hasEventListener` 检查事件目标是否有为特定类型的事件注册的回调](#hasEventListener)
-        *  [`emit` 通过事件名发送自定义事件](#emit)
-        *  [`dispatchEvent` 分发事件到事件流中](#dispatchEvent)
-    * 组件相关方法
-        *  [`addComponent` 向节点添加一个指定类型的组件类](#addComponent)
-        *  [`getComponent`](#getComponent)
-        *  [`getComponentInChildren`](#getComponentInChildren)
-        *  [`getComponents`](#getComponents)
-        *  [`getComponentsInChildren`](#getComponentsInChildren)
-        *  [`removeComponent`](#removeComponent)
-    * 族系相关方法
-        *  [`walk`](#walk)
+  * 节点属性配置
+    *  [`attr` 节点属性配置函数](#attr)
+  * 事件相关
+    *  [`on` 事件注册](#on)
+    *  [`once` 一次性事件注册](#once)
+    *  [`off` 事件注销](#off)
+    *  [`targetOff` 移除目标上的所有注册事件](#targetOff)
+    *  [`hasEventListener` 检查事件目标是否有为特定类型的事件注册的回调](#hasEventListener)
+    *  [`emit` 通过事件名发送自定义事件](#emit)
+    *  [`dispatchEvent` 分发事件到事件流中](#dispatchEvent)
+  * 组件相关方法
+    *  [`addComponent` 向节点添加一个指定类型的组件类](#addComponent)
+    *  [`getComponent`](#getComponent)
+    *  [`getComponentInChildren`](#getComponentInChildren)
+    *  [`getComponents`](#getComponents)
+    *  [`getComponentsInChildren`](#getComponentsInChildren)
+    *  [`removeComponent`](#removeComponent)
+  * 族系相关方法
+    *  [`walk`](#walk)
 .
-        *  [`setParent`](#setParent)
-        *  [`getParent`](#getParent)
+    *  [`setParent`](#setParent)
+    *  [`getParent`](#getParent)
 .
-        *  [`addChild`](#addChild)
-        *  [`insertChild`](#insertChild)
-        *  [`isChildOf`](#isChildOf)
-        *  [`getChildByName`](#getChildByName)
-        *  [`getChildByPath`](#getChildByPath)
-        *  [`getChildByUuid`](#getChildByUuid)
-        *  [`removeFromParent`](#removeFromParent)
+    *  [`addChild`](#addChild)
+    *  [`insertChild`](#insertChild)
+    *  [`isChildOf`](#isChildOf)
+    *  [`getChildByName`](#getChildByName)
+    *  [`getChildByPath`](#getChildByPath)
+    *  [`getChildByUuid`](#getChildByUuid)
+    *  [`removeFromParent`](#removeFromParent)
 .
-        *  [`setSiblingIndex`](#setSiblingIndex)
-        *  [`getSiblingIndex`](#getSiblingIndex)
-        *  [`removeChild`](#removeChild)
-        *  [`removeAllChildren`](#removeAllChildren)
+    *  [`setSiblingIndex`](#setSiblingIndex)
+    *  [`getSiblingIndex`](#getSiblingIndex)
+    *  [`removeChild`](#removeChild)
+    *  [`removeAllChildren`](#removeAllChildren)
 .
-        *  [`destroy`](#destroy)
-        *  [`destroyAllChildren`](#destroyAllChildren)
+    *  [`destroy`](#destroy)
+    *  [`destroyAllChildren`](#destroyAllChildren)
 .
-*  **Node**
-    * static
-        *  `static` [`resetHasChangedFlags`](#resetHasChangedFlags)
-        *  `static` [`isNode`](#isNode)
-        *  `static` [`clearNodeArray`](#clearNodeArray)
-        *  [serializeTag]
-    * 事件相关
-        *  [`pauseSystemEvents`](#pauseSystemEvents)
-        *  [`resumeSystemEvents`](#resumeSystemEvents)
-    * 节点的变换相关方法（位置、移动、旋转、变换、缩放）
-        *  [`invalidateChildren`](#invalidateChildren)
+* **Node**
+  * static
+    *  `static` [`resetHasChangedFlags`](#resetHasChangedFlags)
+    *  `static` [`isNode`](#isNode)
+    *  `static` [`clearNodeArray`](#clearNodeArray)
+    *  [serializeTag]
+  * 事件相关
+    *  [`pauseSystemEvents`](#pauseSystemEvents)
+    *  [`resumeSystemEvents`](#resumeSystemEvents)
+  * 节点的变换相关方法（位置、移动、旋转、变换、缩放）
+    *  [`invalidateChildren`](#invalidateChildren)
 .
-        *  [`updateWorldTransform`](#updateWorldTransform)
+    *  [`updateWorldTransform`](#updateWorldTransform)
 .
-        *  [`setPosition`](#setPosition)
-        *  [`getPosition`](#getPosition)
-        *  [`setWorldPosition`](#setWorldPosition)
-        *  [`getWorldPosition`](#getWorldPosition)
-        *  [`inverseTransformPoint`](#inverseTransformPoint)
+    *  [`setPosition`](#setPosition)
+    *  [`getPosition`](#getPosition)
+    *  [`setWorldPosition`](#setWorldPosition)
+    *  [`getWorldPosition`](#getWorldPosition)
+    *  [`inverseTransformPoint`](#inverseTransformPoint)
 .
-        *  [`lookAt`](#lookAt)
-        *  [`translate`](#translate)
-        *  [`rotate`](#rotate)
+    *  [`lookAt`](#lookAt)
+    *  [`translate`](#translate)
+    *  [`rotate`](#rotate)
 .
-        *  [`setRotation`](#setRotation)
-        *  [`setRotationFromEuler`](#setRotationFromEuler)
-        *  [`getRotation`](#getRotation)
-        *  [`setWorldRotation`](#setWorldRotation)
-        *  [`setWorldRotationFromEuler`](#setWorldRotationFromEuler)
-        *  [`getWorldRotation`](#getWorldRotation)
+    *  [`setRotation`](#setRotation)
+    *  [`setRotationFromEuler`](#setRotationFromEuler)
+    *  [`getRotation`](#getRotation)
+    *  [`setWorldRotation`](#setWorldRotation)
+    *  [`setWorldRotationFromEuler`](#setWorldRotationFromEuler)
+    *  [`getWorldRotation`](#getWorldRotation)
 .
-        *  [`getWorldMatrix`](#getWorldMatrix)
+    *  [`getWorldMatrix`](#getWorldMatrix)
 .
-        *  [`setScale`](#setScale)
-        *  [`getScale`](#getScale)
-        *  [`setWorldScale`](#setWorldScale)
-        *  [`getWorldScale`](#getWorldScale)
+    *  [`setScale`](#setScale)
+    *  [`getScale`](#getScale)
+    *  [`setWorldScale`](#setWorldScale)
+    *  [`getWorldScale`](#getWorldScale)
 .
-        *  [`setRTS`](#setRTS)
-        *  [`getWorldRS`](#getWorldRS)
-        *  [`getWorldRT`](#getWorldRT)
+    *  [`setRTS`](#setRTS)
+    *  [`getWorldRS`](#getWorldRS)
+    *  [`getWorldRT`](#getWorldRT)
 
 ------
 ## 属性
