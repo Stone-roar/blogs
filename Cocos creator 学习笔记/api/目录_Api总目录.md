@@ -23,7 +23,7 @@
 - core/value-types
 - decorator
 - dragonBones
-- [event 事件](目录_Event.md)
+- [event 事件](目录_Event.md "事件")
 - geometry
 - gfx
 - loader
