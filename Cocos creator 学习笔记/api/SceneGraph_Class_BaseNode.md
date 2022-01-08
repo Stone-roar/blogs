@@ -1,3 +1,4 @@
+[（🔙返回上一级）](目录_SceneGraph.md "scene-graph模块") 
 # 类: BaseNode
 [Node](SceneGraph_Class_Node.md "Node类") 的基类，他会负责：
 
