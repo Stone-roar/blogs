@@ -1,4 +1,4 @@
-[（🔙返回总目录）](目录_Api总目录.md "CocosCreator API") 
+[（🔙返回总目录）](目录_Api总目录.md "CocosCreator API")
 # 模块: event
 ## 目录
 ### 类
@@ -26,5 +26,5 @@ EventTarget
 SystemEventTypeUnion
 
 ### 枚举
-InputEventType
-SystemEventType
+* InputEventType
+* [`SystemEvent.EventType` 全局系统事件](Event_Enum_SystemEvent.EventType.md "点击查看所有全局系统事件")
