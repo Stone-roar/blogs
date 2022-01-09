@@ -9,21 +9,21 @@
 * Touch
 
 ### 函数
-Eventify
+* Eventify
 
 ### 接口
-IEventified
+* [`IEventified`](#Event_Interface_IEventified.md)
 
 ### 对象字面量
-pointerEvent2SystemEvent
+* pointerEvent2SystemEvent
 
 ### 变量
-EventTarget
-systemEvent
+* EventTarget
+* systemEvent
 
 ### 类型别名
-EventTarget
-SystemEventTypeUnion
+* EventTarget
+* SystemEventTypeUnion
 
 ### 枚举
 * InputEventType
