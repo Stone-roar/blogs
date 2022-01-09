@@ -1,33 +1,35 @@
-[（🔙返回上一级）](SceneGraph_Class_Node.md "Node类")  
-# 枚举: NodeEventType
+[（1、🔙返回上一级）](目录_SceneGraph.md "scene-graph模块")
+[（2、转到 Node.EventType）](SceneGraph_Class_Node.md#EventType_index "点击查看 “节点—事件类型”")
+# 枚举: Node.EventType
 ## 目录
 * **触摸事件**
-    * [TOUCH_START 触摸开始](#TOUCH_START)
-    * [TOUCH_MOVE 触摸移动](#TOUCH_MOVE)
-    * [TOUCH_END 触摸结束](#TOUCH_END)
-    * [TOUCH_CANCEL 取消触摸](#1TOUCH_CANCEL)
+    * [`TOUCH_START` 触摸开始](#TOUCH_START)
+    * [`TOUCH_MOVE` 触摸移动](#TOUCH_MOVE)
+    * [`TOUCH_END` 触摸结束](#TOUCH_END)
+    * [`TOUCH_CANCEL` 取消触摸](#1TOUCH_CANCEL)
 * **鼠标事件**
-    * [MOUSE_DOWN 鼠标按下](#MOUSE_DOWN)
-    * [MOUSE_MOVE 鼠标移动（按下状态）](#MOUSE_MOVE)
-    * [MOUSE_UP 鼠标松开](#MOUSE_UP)
-    * [MOUSE_WHEEL 滚轮](#MOUSE_WHEEL)
-    * [MOUSE_ENTER 进入区域](#MOUSE_ENTER)
-    * [MOUSE_LEAVE 离开区域](#MOUSE_LEAVE)
+    * [`MOUSE_DOWN` 鼠标按下](#MOUSE_DOWN)
+    * [`MOUSE_MOVE` 鼠标移动（按下状态）](#MOUSE_MOVE)
+    * [`MOUSE_UP` 鼠标松开](#MOUSE_UP)
+    * [`MOUSE_WHEEL` 滚轮](#MOUSE_WHEEL)
+.
+    * [`MOUSE_ENTER` 进入区域](#MOUSE_ENTER)
+    * [`MOUSE_LEAVE` 离开区域](#MOUSE_LEAVE)
 * **节点状态事件**
     * 节点自身状态
-        * [ACTIVE_IN_HIERARCHY_CHANGED](#ACTIVE_IN_HIERARCHY_CHANGED)
-        * [TRANSFORM_CHANGED【位置改变、旋转、缩放】](#TRANSFORM_CHANGED)
-        * [NODE_DESTROYED【被销毁】](#NODE_DESTROYED)
-        * [LAYER_CHANGED【layer改变】](#LAYER_CHANGED)
-        * [SCENE_CHANGED_FOR_PERSISTS【所在场景改变】](#)
-        * [⚠ SIZE_CHANGED](#SIZE_CHANGED)
-        * [⚠ ANCHOR_CHANGED](#ANCHOR_CHANGED)
-        * [⚠ COLOR_CHANGED](#COLOR_CHANGED)
+        * [`ACTIVE_IN_HIERARCHY_CHANGED`](#ACTIVE_IN_HIERARCHY_CHANGED)
+        * [`TRANSFORM_CHANGED` 位置改变、旋转、缩放](#TRANSFORM_CHANGED)
+        * [`NODE_DESTROYED` 被销毁](#NODE_DESTROYED)
+        * [`LAYER_CHANGED` layer改变](#LAYER_CHANGED)
+        * [`SCENE_CHANGED_FOR_PERSISTS` 所在场景改变](#SCENE_CHANGED_FOR_PERSISTS)
+        * [⚠ `SIZE_CHANGED`](#SIZE_CHANGED)
+        * [⚠ `ANCHOR_CHANGED`](#ANCHOR_CHANGED)
+        * [⚠ `COLOR_CHANGED`](#COLOR_CHANGED)
     * 节点族系状态改变
-        * [CHILD_ADDED【添加子节点】](#CHILD_ADDED)
-        * [CHILD_REMOVED【移除子节点】](#CHILD_REMOVED)
-        * [PARENT_CHANGED【父节点状态改变】](#PARENT_CHANGED)
-        * [SIBLING_ORDER_CHANGED【…中顺序改变】](#SIBLING_ORDER_CHANGED)
+        * [`CHILD_ADDED` 添加子节点](#CHILD_ADDED)
+        * [`CHILD_REMOVED` 移除子节点](#CHILD_REMOVED)
+        * [`PARENT_CHANGED` 父节点状态改变](#PARENT_CHANGED)
+        * [`SIBLING_ORDER_CHANGED` …中顺序改变](#SIBLING_ORDER_CHANGED)
 
 
 
@@ -39,16 +41,19 @@
 > 手指开始触摸事件。
 - TOUCH_START = `"touch-start"`
 
+---
 ### TOUCH_MOVE
 > 当手指在屏幕上移动时。
 
 - TOUCH_MOVE = `"touch-move"`
 
+---
 ### TOUCH_END
 > 手指结束触摸事件。
 
 - TOUCH_END = `"touch-end"`
 
+---
 ### TOUCH_CANCEL
 > 当手指在目标节点区域外离开屏幕时。
 
@@ -62,26 +67,31 @@
 
 - MOUSE_DOWN = `"mouse-down"`
 
+---
 ### MOUSE_MOVE
 > 当鼠标在目标节点在目标节点区域中移动时，不论是否按下。
 
 - MOUSE_MOVE = `"mouse-move"`
 
+---
 ### MOUSE_UP
 > 当鼠标从按下状态松开时触发一次。
 
 - MOUSE_UP = `"mouse-up"`
 
+---
 ### MOUSE_WHEEL
 > 当鼠标滚轮滚动时。
 
 - MOUSE_WHEEL = `"mouse-wheel"`
 
+---
 ### MOUSE_ENTER
 > 当鼠标**移入**目标节点区域时，不论是否按下。
 
 - MOUSE_ENTER = `"mouse-enter"`
 
+---
 ### MOUSE_LEAVE
 > 当鼠标**移出**目标节点区域时，不论是否按下。
 

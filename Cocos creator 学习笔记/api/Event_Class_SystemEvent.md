@@ -1,4 +1,4 @@
-[（🔙返回上一级）](目录_Event.md "event模块") 
+[（🔙返回上一级）](目录_Event.md "event模块")
 ## 类: SystemEvent
 
 `extend: ` [IEventified](https://docs.cocos.com/creator/api/zh/#/docs/3.4/zh/event/Interface/IEventified)
@@ -43,9 +43,9 @@ systemEvent.off(SystemEvent.EventType.DEVICEMOTION, this.onDeviceMotionEvent, th
 
 <h3 id="EventType_index">EventType</h3>
 
-SystemEvent 支持的事件类型以及节点事件类型
+> 全局系统事件
 
-- `static` **EventType**: `EnumAlias`<> = `SystemEventType`
+- `static` [EventType](Event_Enum_SystemEvent.EventType.md "点击查看所有全局系统事件"): `EnumAlias`<> = `SystemEventType`
 --------------------
 
 ## 方法

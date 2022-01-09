@@ -257,7 +257,7 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 
 > 节点可能发出的事件类型
 
-- `static` EventType: [NodeEventType](SceneGraph_Class_Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") = `NodeEventType`
+- `static` EventType: [NodeEventType](SceneGraph_Enum_Node.EventType.md "点击查看所有节点监听事件类型") = `NodeEventType`
 
 <h3 id="NodeSpace_index">（枚举）NodeSpace</h3>
 
