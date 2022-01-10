@@ -148,19 +148,22 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
     *  [`getWorldRT`](#getWorldRT)
 
 ------
-## 属性
+# 属性
 [（🆙回到顶部）](#目录)
+## 基础属性
 ### name
 > 该节点名称。
 
 - name: `string`
 
+---
 ### uuid
 > 主要用于编辑器的 uuid，在编辑器下可用于持久化存储，在项目构建之后将变成自增的 id。
 
 - uuid: `string`
 
 ------
+## 节点状态
 ### active
 > 当前节点的自身激活状态。
 
@@ -170,17 +173,20 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 - active: boolean
 
+---
 ### activeInHierarchy
 > 表示此节点是否在场景中激活。
 
 - activeInHierarchy: `boolean`
 
+---
 ### eventProcessor
 > 当前节点的事件处理器，提供 EventTarget 能力。
 
 - eventProcessor: `any`
 
 ------
+## 族系
 ### components
 > 获取附加到此节点的所有组件。
 
@@ -233,10 +239,12 @@ log(node.isValid);    // false, destroyed in the end of last frame
 
 ------
 [（🆙回到顶部）](#目录)
+## 枚举标记
 ### reserveContentsForAllSyncablePrefabTag
 机翻：“保留所有可同步预制标记的内容”。
 - `static` reserveContentsForAllSyncablePrefabTag: `symbol` = `reserveContentsForAllSyncablePrefabTag`
 
+---
 <h3 id="TransformBit_index">（枚举）TransformBit</h3>
 
 > 节点的空间变换位**标记**
@@ -253,12 +261,14 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 }, this);
 ```
 
+---
 <h3 id="EventType_index">（枚举）EventType</h3>
 
 > 节点可能发出的事件类型
 
 - `static` EventType: [NodeEventType](SceneGraph_Enum_Node.EventType.md "点击查看所有节点监听事件类型") = `NodeEventType`
 
+---
 <h3 id="NodeSpace_index">（枚举）NodeSpace</h3>
 
 > 空间变换操作的坐标系 **标记**：本地坐标系 Or 世界坐标系
@@ -266,47 +276,56 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 - `static` NodeSpace: [NodeSpace](SceneGraph_Enum_NodeSpace.md) = `NodeSpace`
 
 ---
+## 基础属性
 ### layer
 > 节点所属层，主要影响射线检测、物理碰撞等，参考 [[Layers]]
 
 - layer: `number`
 
+---
 ### native
 - native: `any`
 
 ---
+## 方向向量
 ### forward
 > 当前节点面向的前方方向，默认前方为 -z 方向
 
 - forward: `Vec3`
 
+---
 ### right
 > 返回当前节点在世界空间中朝右的方向向量
 
 - right: `Vec3`
 
+---
 ### up
 返回当前节点在世界空间中朝上的方向向量
 
 - up: `Vec3`
 
 ---
+## 节点的变换——位置
 ### position
 > 本地坐标系下的坐标
 
 - position: `Readonly<Vec3>`
 
+---
 ### worldPosition
 > 世界坐标系下的坐标
 
 - worldPosition: `Readonly<Vec3>`
 
 ---
+## 节点的变换——旋转
 ### angle
 > 本地坐标系下的旋转，用欧拉角表示，但是限定在 z 轴上。
 
 - angle: `number`
 
+---
 ### eulerAngles
 > 本地坐标系下的旋转，用欧拉角表示
 
@@ -317,45 +336,52 @@ this.node.on(Node.EventType.TRANSFORM_CHANGED, (type)=>{
 
 - rotation: `Readonly<Quat>`
 
+---
 ### worldRotation
 > 世界坐标系下的旋转，用四元数表示
 
 - worldRotation: `Readonly<Quat>`
 
 ---
+## 节点的变换——变换
 ### hasChangedFlags
 > 这个节点的空间变换信息在当前帧内是否有变过？
 
 - hasChangedFlags: `number`
 
+---
 ### matrix
 > 本地坐标系变换矩阵
 
 - matrix:`Readonly<Mat4>`
 
+---
 ### worldMatrix
 > 世界坐标系变换矩阵
 
 - worldMatrix: `Readonly<Mat4>`
 
 ---
+## 节点的变换——缩放
 ### scale
 > 本地坐标系下的缩放
 
 - scale: `Readonly<Vec3>`
 
+---
 ### worldScale
 > 世界坐标系下的缩放
 
 - worldScale: `Readonly<Vec3>`
 
 ---
-## 构造函数
+# 构造函数
 
 
 
 ---
-## 方法
+# 方法
+## 节点属性配置方法
 [（🆙回到顶部）](#目录)
 ### attr
 - **attr**(`attrs`: `unknown`) :  void
@@ -370,6 +396,7 @@ node.attr(attrs);
 ```
 
 ---
+## 节点事件相关方法
 ### on
 
 - **on**(type: `string` | `NodeEventType`, callback: `AnyFunction`, target?: `unknown`, useCapture?: `any`) :  `void`
@@ -394,9 +421,9 @@ node.on(NodeEventType.TOUCH_END, callback, this);
 | Name | Type | Description |
 | :-: | :-: | :-: |
 | `type` | `string` \| `NodeEventType` | `string` 表示要侦听的事件类型的字符串。所有有关内置事件请查阅 [Node.EventType](SceneGraph_Class_Node_Enum_NodeEventType.md "点击查看所有节点监听事件类型") |
-| `callback` | `AnyFunction` | 事件触发时执行的函数。回调函数具有唯一性，重复的回调函数将被忽略。 |
+| `callback` | `AnyFunction` | **事件触发时执行的函数**。回调函数具有唯一性，重复的回调函数将被忽略。 |
 | `target?` | `unknown` | `target` 表示回调函数执行时的this指向（回调函数由谁调用），可以为 `null`。 |
-| `useCapture?` | `any` | 只有节点事件才会设置这个值。When set to true, the listener will be triggered at capturing phase which is ahead of the final target emit, otherwise it will be triggered during bubbling phase. |
+| `useCapture?` | `any` | 只有节点事件才会设置这个值。当 `useCapture?` 设置为`true`时，冒泡顺序将与原先相反。When set to true, the listener will be triggered at capturing phase which is ahead of the final target emit, otherwise it will be triggered during bubbling phase. |
 
 **Returns** `void`
 
@@ -512,6 +539,7 @@ eventTarget.emit('fire', message, emitter);
 **Returns** `void`
 
 ---
+## 组件相关方法
 ### addComponent
 
 - **addComponent**(`classConstructor`: `Constructor`<`T`>) : `T`
@@ -534,8 +562,8 @@ var sprite = node.addComponent(Sprite);
 
 ##### Returns  `T`
 
-.
 
+---
 - **addComponent**(`className`: `string`) :  `Component`
 
 向节点添加一个指定类型的组件类，你还可以通过传入脚本的名称来添加组件。
