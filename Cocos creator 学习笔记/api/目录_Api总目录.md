@@ -4,7 +4,7 @@
 - 3d
 - 3d/primitive
 - animation
-- asset
+- [`asset` 资源](目录_Asset.md "资源")
 - asset-manager
 - cocos/3d/misc
 - cocos/core/asset-manager

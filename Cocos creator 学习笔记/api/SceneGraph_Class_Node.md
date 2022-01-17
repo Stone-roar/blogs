@@ -1,6 +1,6 @@
 [（🔙返回上一级）](目录_SceneGraph.md "scene-graph模块")
 # 类: Node
-继承于: [BaseNode](SceneGraph_Class_BaseNode.md "Node基类")
+继承于: [BaseNode](SceneGraph_Class_BaseNode.md "节点基类")
 
 Cocos Creator 场景中的所有节点类。 基本特性有：
 
@@ -10,7 +10,7 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 ## 目录
 ### 属性
-* 同 class [**BaseNode**](SceneGraph_Class_BaseNode.md "Node基类")
+* 同 class [**BaseNode**](SceneGraph_Class_BaseNode.md "节点基类")
   * 基础属性
     * [`name` 节点名称](#name)
     * [`uuid`](#uuid "uuid")
