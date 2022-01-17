@@ -10,7 +10,12 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
 
 ## 目录
 ### 属性
+
 * 同 class [**BaseNode**](SceneGraph_Class_BaseNode.md "节点基类")
+  * 同 class CCObject
+    * [`isValid` 该对象是否可用](#isValid)
+    * [`hideFlags`](#hideFlags)
+    * [`replicated`](#replicated)
   * 基础属性
     * [`name` 节点名称](#name)
     * [`uuid`](#uuid "uuid")
@@ -23,10 +28,6 @@ Cocos Creator 场景中的所有节点类。 基本特性有：
     * [`children` 节点的所有子节点](#children)
     * [`parent` 其父节点](#parent)
     * [`scene` 此节点属于哪个场景](#scene)
-  * 同 class CCObject
-    * [`isValid` 该对象是否可用](#isValid)
-    * [`hideFlags`](#hideFlags)
-    * [`replicated`](#replicated)
 .
 * **Node**
   * static
